@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link href="../../node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script href="../bootstrap/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+</head>
+<body>
+<div class="container " ng-app="directory">
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <div ng-controller="cardsCtrl">
+       <label>Search</label><input type="text" ng-model="query" maxlength="50">
+        <button>Find</button>
+        <button ng-click="getAllContacts()">Show All</button>
+        <br>
+        <table class="table colDecor main table-bordered table-striped">
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Zip Code</th>
+                <th>Delete</th>
+            </tr>
+            <tr ng-repeat="person in persons">
+                <td>{{person.firstName}} {{person.lastName}}</td>
+                <td>{{person.city}}</td>
+                <td>{{person.zipCode}}</td>
+                <td><button ng-click="deleteContact(person._id)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

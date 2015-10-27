@@ -1,0 +1,86 @@
+
+aside{
+  width: 25%;
+  float: left;
+}
+
+.colDecor{
+  background: white;
+  margin-top: 5px;
+  -webkit-box-shadow: 2px 3px 20px 1px #252772;
+  -moz-box-shadow: 2px 3px 20px 1px #252772;
+  box-shadow: 2px 3px 20px 1px #252772;
+  padding: 2%;
+}
+
+div#header {
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.generalPicture {
+  max-width: 125px !important;
+  max-height: 125px !important;
+  padding: 2%;
+  background-color: white
+}
+
+.h2{
+  display: block;
+  font-size: 1.5em;
+
+}
+
+.sectionLabel{
+  margin-left: 13%;
+}
+.main{
+  width: 70%;
+  margin-right: 5%;
+  margin: auto;
+}
+
+.mainBanner > img{
+  padding-left: 5%;
+}
+
+.navbar{
+  height: 3%;
+}
+.navbar-inverse{
+  background: #404042;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td{
+  background-color: #cec7c8;
+}
+
+.table-striped>tbody>tr:nth-child(2n+2)>td,
+.table-striped>tbody>tr:nth-child(2n+2)>th {
+  background-color: white;
+}
+.white{
+  background: rgb(255, 255, 255);
+}
+
+aside.colDecor {
+  padding: 0px;
+}
+
+footer{
+  background: #404042;
+  color: white;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding: auto;
+  padding-top: 2%;
+  margin-top: 2%;
+}
+
+th{
+  background: #cdab6d;
+  border-color:  #cdab6d;
+}
