@@ -25,7 +25,7 @@
                 <th>Zip Code</th>
                 <th>Delete</th>
             </tr>
-            <tr ng-repeat="person in persons">
+            <tr ng-repeat="person in persons" ng-hide="person.isDeleted">
                 <td>{{person.firstName}} {{person.lastName}}</td>
                 <td>{{person.city}}</td>
                 <td>{{person.zipCode}}</td>

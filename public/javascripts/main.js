@@ -12,13 +12,20 @@ myApp.controller('cardsCtrl', function($scope,$http) {
     $http.get("/api/directory")
       .success(function(response){
          $scope.persons = response;
+        $scope.persons.forEach(function(person){
+          person.isDeleted = false;
+        })
       }
+
+
     );
   }
 
   $scope.deleteContact = function(objID){
     $http.delete("/api/directory/"+objID).success(function(response){
       console.log(response);
+
+      
     })
   }
 });
