@@ -2,34 +2,47 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link href="../../node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script href="../bootstrap/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="/javascripts/main.js"></script>
 </head>
-<body>
-<div class="container " ng-app="directory">
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 
+<body>
+
+<span id="title" class="h1">Roladex</span>
+
+<div class="container" ng-app="directory">
     <div ng-controller="cardsCtrl">
-       <label>Search</label><input type="text" ng-model="query" maxlength="50">
-        <button>Find</button>
-        <button ng-click="getAllContacts()">Show All</button>
+        <div class="form-group">
+            <form role="form" class="form">
+                <input class="form-control" placeholder="Search" type="text" ng-model="query" maxlength="50" >
+                <button class="btn btn-primary" ng-click="find()">Find</button>
+                <button class="btn btn-primary" ng-click="addNew()">Add</button>
+                <button class="btn btn-primary" ng-click="getAllContacts()">Show All</button>
+            </form>
+        </div>
+
         <br>
-        <table class="table colDecor main table-bordered table-striped">
+        <table class="table main table-striped">
             <tr>
-                <th>Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
                 <th>City</th>
                 <th>Zip Code</th>
+                <th>Update</th>
                 <th>Delete</th>
             </tr>
             <tr ng-repeat="person in persons" ng-hide="person.isDeleted">
-                <td>{{person.firstName}} {{person.lastName}}</td>
-                <td>{{person.city}}</td>
-                <td>{{person.zipCode}}</td>
-                <td><button ng-click="deleteContact(person._id)">Delete</button></td>
+                <td><input type="text" ng-model="person.firstName" ></td>
+                <td><input type="text" ng-model="person.lastName"></td>
+                <td><input type="text" ng-model="person.city"></td>
+                <td><input type="text" ng-model="person.zipCode"></td>
+                <td>
+                    <button ng-show="checkEmpty(person)" ng-click="addContact(person)">Add</button>
+                    <button ng-hide="checkEmpty(person)" ng-click="updateContact(person._id,person)">Update</button></td>
+                <td><button ng-click="deleteContact(person)">Delete</button></td>
             </tr>
         </table>
     </div>

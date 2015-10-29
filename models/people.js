@@ -9,8 +9,7 @@ var personSchema = new mongoose.Schema({
   city: String,
   firstName: String,
   lastName: String,
-  zipCode: Number,
-  id: Number
+  zipCode: Number
 });
 
 module.exports = restful.model('people', personSchema);
