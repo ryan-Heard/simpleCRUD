@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+var port = process.env.PORT || 9000;
 
 app.use('/', routes);
 app.use('/users', users);
@@ -60,5 +61,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+app.listen(port);
 module.exports = app;
