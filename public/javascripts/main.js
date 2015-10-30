@@ -32,11 +32,9 @@ myApp.controller('cardsCtrl', function($scope,$http) {
 
   $scope.addContact = function(obj){
     delete obj.hasBeenSent;
-    console.log(obj);
     $http.post('/api/directory/',obj).success(function(err,response){
       return true;
     }).error(function(err){
-      console.log(err);
       return false;
     });
   }
@@ -49,14 +47,12 @@ myApp.controller('cardsCtrl', function($scope,$http) {
   };
 
   $scope.find = function(){
-    console.log("all");
     $http.get("/api/find/"+$scope.query).success(function(response){
       $scope.persons = response;
     });
   }
 
   $scope.updateContact = function(objID, info){
-    console.log(typeof info.hasBeenSent)
     $http.put("/api/directory/"+objID,info).success(function(response){
       return true;
     });
