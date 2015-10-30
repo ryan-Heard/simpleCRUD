@@ -9,12 +9,12 @@ myApp.controller('cardsCtrl', function($scope,$http) {
 
   $scope.addNew = function(){
     var pending = {};
-    pending.firstName = "";
-    pending.lastName = "";
-    pending.city = "";
-    pending.zipCode = null;
+    pending.firstName = "[First]";
+    pending.lastName = "[Last]";
+    pending.city = "[City]";
+    pending.zipCode = "[Zip Code]";
     pending.hasBeenSent = false;
-    $scope.persons.push(pending);
+    $scope.persons.unshift(pending);
 
   }
 
@@ -24,6 +24,7 @@ myApp.controller('cardsCtrl', function($scope,$http) {
         $scope.persons = response;
         $scope.persons.forEach(function(person){
           person.isDeleted = false;
+          person.isChanging = false;
         })
       }
     );

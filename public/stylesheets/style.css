@@ -28,7 +28,8 @@ th {
 .table input{
   background: transparent;
   border: transparent;
-  margin-left: 40%;
+  max-width: 50%;
+  margin-left: 25%;;
 }
 
 .table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
