@@ -18,13 +18,12 @@
         <div class="form-group">
             <form role="form" class="form">
                 <input class="form-control" placeholder="Search" type="text" ng-model="query" maxlength="50" >
-                <button class="btn btn-primary" ng-click="find()">Find</button>
-                <button class="btn btn-primary" ng-click="addNew()">Add</button>
-                <button class="btn btn-primary" ng-click="getAllContacts()">Show All</button>
+                <span class="glyphicon glyphicon-search" ng-click="find()" title="Search"></span>
+                <span class="glyphicon glyphicon-plus pull-right" ng-click="addNew()" title="Add New Contacts"></span>
+                <span class="glyphicon glyphicon-list-alt pull-right" ng-click="getAllContacts()" title="Show All Contacts"></span>
             </form>
         </div>
 
-        <br>
         <table class="table main table-striped">
             <tr>
                 <th>First Name</th>
@@ -40,9 +39,12 @@
                 <td><input type="text" ng-model="person.city"></td>
                 <td><input type="text" ng-model="person.zipCode"></td>
                 <td>
-                    <button ng-show="checkEmpty(person)" ng-click="addContact(person)">Add</button>
-                    <button ng-hide="checkEmpty(person)" ng-click="updateContact(person._id,person)">Update</button></td>
-                <td><button ng-click="deleteContact(person)">Delete</button></td>
+                    <span class="glyphicon glyphicon-plus pull-right"  ng-show="checkEmpty(person)" ng-click="addContact(person)" title="Add New Contact"></span>.
+                     <span class="glyphicon glyphicon-pencil" ng-hide="checkEmpty(person)" ng-click="updateContact(person._id,person)" title="Update Contact"></span>
+                </td>
+                <td>
+                    <span class="glyphicon glyphicon glyphicon-remove pull-right"  ng-click="deleteContact(person)" title="Delete Contact"></span>
+                </td>
             </tr>
         </table>
     </div>
